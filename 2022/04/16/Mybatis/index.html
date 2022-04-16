@@ -1,240 +1,215 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#33363b">
-    <meta name="msapplication-TileColor" content="#33363b">
-    
-    
-    
-    
-    <meta name="keywords" content="Life, ARIA, Hexo">
-    
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    
-    
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
-    
-    
-    <link rel="manifest" href="/favicons/site.webmanifest">
-    
-    
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-    
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
-    
-    
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
-    
-    
-<link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/post.css">
+<html lang="zh_CN ">
 
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
-    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script defer type="text/javascript" src="/js/util.js"></script>
-    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
-    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexo || Mybatis文档</title>
+    <meta name="author" content="YQY">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <link rel="icon" href="/images/avatar.png">
+    <link rel="stylesheet" href="/css/antd.min.css">
     
-    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="/css/full-theme.css">
     
-    
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var searchPath = "";
-      if (searchPath.length === 0) {
-        searchPath = "search.xml";
-      }
-      var path = "/" + searchPath;
-      searchFunc(path, "search-input", "search-result");
-    });
-    </script>
-    
-    
-    <script defer type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var cb = null;
-      var els = $(".post figure.highlight");
-      if (els.length) {
-        // Enabled Hexo highlight line number.
-        $(els).each(function (i, e) {
-          // $(e).before("<button class=\"copy button\">复制</button>");
-          $(e).before([
-            "<div class=\"code-titlebar\">",
-              "<div class=\"titlebar-left\">",
-                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
-              "</div>",
-              "<div class=\"titlebar-center\">",
-                "code",
-              "</div>",
-              "<div class=\"titlebar-right\">",
-                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
-                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
-                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
-              "</div>",
-            "</div>"
-          ].join(""));
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              return trigger.parentNode.parentNode.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
-          }
-        });
-      } else {
-        // Disabled Hexo highlight line number.
-        els = $(".post pre code");
-        $(els).each(function (i, e) {
-          // Add button before pre, not code.
-          // $(e).parent().before("<button class=\"copy button\">复制</button>");
-          $(e).before([
-            "<div class=\"code-titlebar\">",
-              "<div class=\"titlebar-left\">",
-                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
-              "</div>",
-              "<div class=\"titlebar-center\">",
-                "code",
-              "</div>",
-              "<div class=\"titlebar-right\">",
-                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
-                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
-                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
-              "</div>",
-            "</div>"
-          ].join(""));
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              return trigger.parentNode.parentNode.nextElementSibling;
-          }
-        });
-      }
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
-    </script>
-    
-    <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Mybatis文档 | Hexo</title>
-  <meta name="generator" content="Hexo 6.1.0"></head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
-    
-<header id="header" class="header" style="background: #33363b;">
-  <div class="container">
-    <div class="header-container">
-      <div class="header-title">
-        <h1 class="title"><a href="/">Hexo</a></h1>
-        <h2 class="subtitle"></h2>
-      </div>
-      
-      <div class="logo">
-        <img src="/images/logo.png" alt="logo">
-      </div>
-      
+    <script src="/js/vue.js"></script>
+    <script src="/js/antd.min.js"></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+
+    <div id="loading"
+        style="height: 100vh; width: 100%; position: fixed;display: flex;z-index: 200; justify-content: space-between;">
+        <div id="loadleft" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
+        <div id="loadright" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
+        <div
+            style="position: fixed; height: 100vh; width: 100%;display: flex;justify-content: center;align-items: center;">
+            <div id="loadcontent"
+                style="width:400px;height:400px;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px#a3ddfb; text-align:center;opacity:1;transition:opacity 0.3s ease-out;">
+                <div>
+                    <h2>LOADING...</h2>
+                    <p>加载过慢请开启缓存(浏览器默认开启)</p>
+                    <div>
+                        <img src="/dancingkitty.gif" alt="loading">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
-      <ul id="menu" role="menubar" aria-hidden="false">
-        
-        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
-        
-        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
-        
-        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
-        
-        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
-        
-        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
-        
-      </ul>
-    </nav>
-  </div>
-</header>
 
+    <div id="layout">
+        <transition name="into">
+            <div v-show="show_page" style="display: none;">
+                <div id="menu_show">
+                     
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Hexo</span>
+        </a>
+        
+        <a href="/">
+            <span>
+                <a-icon type="home" theme="filled" />
+            </span>
+            <span>home</span>
+        </a>
+        
+        <a href="/about">
+            <span>
+                <a-icon type="idcard" theme="filled" />
+            </span>
+            <span>about</span>
+        </a>
+        
+        <a href="/archives">
+            <span>
+                <a-icon type="folder" theme="filled" />
+            </span>
+            <span>archives</span>
+        </a>
+        
+        <a href="/categories">
+            <span>
+                <a-icon type="book" theme="filled" />
+            </span>
+            <span>categories</span>
+        </a>
+        
+        <a href="/tags">
+            <span>
+                <a-icon type="tags" theme="filled" />
+            </span>
+            <span>tags</span>
+        </a>
+        
+        <a href="/links">
+            <span>
+                <a-icon type="links" theme="filled" />
+            </span>
+            <span>links</span>
+        </a>
+        
+    </div>
 
-    <main id="main" class="main">
-      <div class="container">
-        <div class="main-container">
-          <div class="content">
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div :class="'title'" @click="menu_show=!menu_show">
+            <span style="margin-right: 10px;">
+                <a-icon type="appstore" theme="filled" />
+            </span>
+            <span>Hexo</span>
+        </div>
+        <div class="items" v-show="menu_show">
             
-<div id="post" class="page">
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/16/Mybatis/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="YQY">
-       <meta itemprop="description" content="">
-       <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="Hexo">
-      </span>
+            <a href="/">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="home" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="idcard" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="folder" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="book" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="tags" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">tags</div>
+                </div>
+            </a>
+            
+            <a href="/links">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="links" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">links</div>
+                </div>
+            </a>
+            
+        </div>
+        <div class="curtain" v-show="menu_show"></div>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">Mybatis文档</h1>
-      <div class="post-meta">
+
+</nav>
+                </div>
+
+                <div id="main">
+                     
+<link rel="stylesheet" href="/css/post-body.css">
+<div class="article">
+    <div>
+        <h1>Mybatis文档 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2022/4/16
+        </span>
+
         
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-04-16T15:04:03+08:00">2022-04-16 15:04:03</time></span>
+        <span class="category">
+            <a href="/categories/ssm">
+                <span class="icon">
+                    <a-icon type="book" theme="filled" />
+                </span>
+                ssm
+            </a>
         </span>
         
+
         
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ssm/" itemprop="url" rel="index"><span itemprop="name">ssm</span></a></span>
+
+        <span class="tags">
+            <span class="icon">
+                <a-icon type="tags" theme="filled" />
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/mybatis" style=color:#00bcd4>
+                    mybatis
+                </a>
+            </span>
+            
         </span>
         
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      <h3 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h3><h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><p><a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/index.html">https://mybatis.org/mybatis-3/zh/index.html</a></p>
+    </div>
+
+    <div class="content" v-pre>
+        <h3 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h3><h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><p><a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/index.html">https://mybatis.org/mybatis-3/zh/index.html</a></p>
 <p>MyBatis 是一款优秀的<strong>持久层</strong>框架，它支持自定义 SQL、存储过程以及高级映射。MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。MyBatis 可以通过<em>简单的 XML</em>（多用） 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录</p>
 <h6 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h6><ul>
 <li>持久化就是将程序的数据在持久状态和顺势状态转化的过程</li>
@@ -244,36 +219,110 @@
 <h4 id="增删改查xml"><a href="#增删改查xml" class="headerlink" title="增删改查xml"></a>增删改查xml</h4><p>id：对应的namespace中的方法名</p>
 <p>resultType：Sql语句执行的返回值</p>
 <p>parameterType：参数类型</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectUserId&quot; parameterType=&quot;int&quot; resultType=&quot;com.join.mybatis.entity.User&quot;&gt;</span><br><span class="line">    select * from datasept.user where id = #&#123;id&#125;;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;insert id=&quot;insertUser&quot; parameterType=&quot;com.join.mybatis.entity.User&quot;&gt;</span><br><span class="line">    insert into datasept.user (id,name,age) value(#&#123;id&#125;,#&#123;name&#125;,#&#123;age&#125;);</span><br><span class="line">&lt;/insert&gt;</span><br><span class="line">&lt;update id=&quot;updateUser&quot; parameterType=&quot;com.join.mybatis.entity.User&quot;&gt;</span><br><span class="line">     update datasept.user set name = #&#123;name&#125;,age = #&#123;age&#125; where id = #&#123;id&#125;;</span><br><span class="line">&lt;/update&gt;</span><br><span class="line">&lt;delete id=&quot;deleteUser&quot; parameterType=&quot;int&quot;&gt;</span><br><span class="line">     delete from datasept.user where id = #&#123;id&#125;;</span><br><span class="line">&lt;/delete&gt;</span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code>&lt;select id=&quot;selectUserId&quot; parameterType=&quot;int&quot; resultType=&quot;com.join.mybatis.entity.User&quot;&gt;
+    select * from datasept.user where id = #&#123;id&#125;;
+&lt;/select&gt;
+&lt;insert id=&quot;insertUser&quot; parameterType=&quot;com.join.mybatis.entity.User&quot;&gt;
+    insert into datasept.user (id,name,age) value(#&#123;id&#125;,#&#123;name&#125;,#&#123;age&#125;);
+&lt;/insert&gt;
+&lt;update id=&quot;updateUser&quot; parameterType=&quot;com.join.mybatis.entity.User&quot;&gt;
+     update datasept.user set name = #&#123;name&#125;,age = #&#123;age&#125; where id = #&#123;id&#125;;
+&lt;/update&gt;
+&lt;delete id=&quot;deleteUser&quot; parameterType=&quot;int&quot;&gt;
+     delete from datasept.user where id = #&#123;id&#125;;
+&lt;/delete&gt;
+</code></pre>
 <h5 id="Test代码"><a href="#Test代码" class="headerlink" title="Test代码"></a>Test代码</h5><p><em><strong>增删改需要提交事务</strong></em></p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public void select()&#123;</span><br><span class="line">	//获得SqlSession对象</span><br><span class="line">	SqlSession sqlSession;</span><br><span class="line">	try&#123;</span><br><span class="line">		sqlSession = MybatisUtil.getSqlSession();</span><br><span class="line">		//方法一：getMapper</span><br><span class="line">		UserMapper mapper = sqlSession.getMapper(UserMapper.class);//起名变化</span><br><span class="line">		//UserDao userDao = sqlSession.getMapper(UserDao.class);</span><br><span class="line">		List&lt;User&gt; userList = userDao.getUserList();</span><br><span class="line">		//方法二：不推荐使用</span><br><span class="line">		List&lt;User&gt; userList = sqlSession.selectList(&quot;com.join.mybatis.dao.UserDao.getUserList&quot;);</span><br><span class="line">	</span><br><span class="line">		for(User user : userList)&#123;</span><br><span class="line">			System.out.println(user);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;catch(Exception e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;finally &#123;</span><br><span class="line">		//关闭SqlSession</span><br><span class="line">		sqlSession.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public void addUser()&#123;</span><br><span class="line">    SqlSession sqlSession = MybatisUtil.getSqlSession();</span><br><span class="line">    UserMapper mapper = sqlSession.getMapper(UserMapper.class);</span><br><span class="line">    int count = mapper.addUser(new User(&quot;xxx&quot;,23));</span><br><span class="line">    if(count &gt; 0)&#123;</span><br><span class="line">        System.out.println(&quot;添加成功&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    //提交事务</span><br><span class="line">    sqlSession.commit();</span><br><span class="line">    //关闭SqlSession</span><br><span class="line">    sqlSession.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code>public void select()&#123;
+    //获得SqlSession对象
+    SqlSession sqlSession;
+    try&#123;
+        sqlSession = MybatisUtil.getSqlSession();
+        //方法一：getMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);//起名变化
+        //UserDao userDao = sqlSession.getMapper(UserDao.class);
+        List&lt;User&gt; userList = userDao.getUserList();
+        //方法二：不推荐使用
+        List&lt;User&gt; userList = sqlSession.selectList(&quot;com.join.mybatis.dao.UserDao.getUserList&quot;);
+    
+        for(User user : userList)&#123;
+            System.out.println(user);
+        &#125;
+    &#125;catch(Exception e) &#123;
+        e.printStackTrace();
+    &#125;finally &#123;
+        //关闭SqlSession
+        sqlSession.close();
+    &#125;
+&#125;
+</code></pre>
+<pre><code>public void addUser()&#123;
+    SqlSession sqlSession = MybatisUtil.getSqlSession();
+    UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+    int count = mapper.addUser(new User(&quot;xxx&quot;,23));
+    if(count &gt; 0)&#123;
+        System.out.println(&quot;添加成功&quot;);
+    &#125;
+    //提交事务
+    sqlSession.commit();
+    //关闭SqlSession
+    sqlSession.close();
+&#125;
+</code></pre>
 <h4 id="配置解析"><a href="#配置解析" class="headerlink" title="配置解析"></a>配置解析</h4><p><strong>尽管可以配置多个环境，但每个 SqlSessionFactory 实例只能选择一种环境。</strong></p>
 <p><strong>每个数据库对应一个 SqlSessionFactory 实例</strong></p>
 <p>为了指定创建哪种环境，只要将它作为可选的参数传递给 SqlSessionFactoryBuilder 即可。可以接受环境配置的两个方法签名是：</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, environment);</span><br><span class="line">SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, environment, properties);</span><br></pre></td></tr></table></figure>
-
+<pre><code>SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, environment);
+SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, environment, properties);
+</code></pre>
 <p>如果忽略了环境参数，那么将会加载默认环境，如下所示：</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader);</span><br><span class="line">SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, properties);</span><br></pre></td></tr></table></figure>
-
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- default值为环境的id值 --&gt;</span><br><span class="line">&lt;environments default=&quot;development&quot;&gt;</span><br><span class="line">  &lt;environment id=&quot;development&quot;&gt;</span><br><span class="line">    &lt;transactionManager type=&quot;JDBC&quot;&gt;</span><br><span class="line">      &lt;property name=&quot;...&quot; value=&quot;...&quot;/&gt;</span><br><span class="line">    &lt;/transactionManager&gt;</span><br><span class="line">    &lt;dataSource type=&quot;POOLED&quot;&gt;</span><br><span class="line">      &lt;property name=&quot;driver&quot; value=&quot;$&#123;driver&#125;&quot;/&gt;</span><br><span class="line">      &lt;property name=&quot;url&quot; value=&quot;$&#123;url&#125;&quot;/&gt;</span><br><span class="line">      &lt;property name=&quot;username&quot; value=&quot;$&#123;username&#125;&quot;/&gt;</span><br><span class="line">      &lt;property name=&quot;password&quot; value=&quot;$&#123;password&#125;&quot;/&gt;</span><br><span class="line">    &lt;/dataSource&gt;</span><br><span class="line">  &lt;/environment&gt;</span><br><span class="line">&lt;/environments&gt;</span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code>SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader);
+SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, properties);
+</code></pre>
+<pre><code>&lt;!-- default值为环境的id值 --&gt;
+&lt;environments default=&quot;development&quot;&gt;
+  &lt;environment id=&quot;development&quot;&gt;
+    &lt;transactionManager type=&quot;JDBC&quot;&gt;
+      &lt;property name=&quot;...&quot; value=&quot;...&quot;/&gt;
+    &lt;/transactionManager&gt;
+    &lt;dataSource type=&quot;POOLED&quot;&gt;
+      &lt;property name=&quot;driver&quot; value=&quot;$&#123;driver&#125;&quot;/&gt;
+      &lt;property name=&quot;url&quot; value=&quot;$&#123;url&#125;&quot;/&gt;
+      &lt;property name=&quot;username&quot; value=&quot;$&#123;username&#125;&quot;/&gt;
+      &lt;property name=&quot;password&quot; value=&quot;$&#123;password&#125;&quot;/&gt;
+    &lt;/dataSource&gt;
+  &lt;/environment&gt;
+&lt;/environments&gt;
+</code></pre>
 <h4 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h4><ul>
 <li>为Java类设置一个短的名字,减少类完全限定名的冗余</li>
 <li>指定一个包名,Mybatis会在包名下搜索需要的JavaBean,例如:扫描实体类的包,默认别名是这个类的<strong>类名首字母小写.</strong></li>
 </ul>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;typeAliases&gt;</span><br><span class="line">  &lt;typeAlias alias=&quot;Author&quot; type=&quot;domain.blog.Author&quot;/&gt;</span><br><span class="line">  &lt;typeAlias alias=&quot;user&quot; type=&quot;com.join.mybatis.entity.User&quot;/&gt;</span><br><span class="line">&lt;/typeAliases&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;typeAliases&gt;
+  &lt;typeAlias alias=&quot;Author&quot; type=&quot;domain.blog.Author&quot;/&gt;
+  &lt;typeAlias alias=&quot;user&quot; type=&quot;com.join.mybatis.entity.User&quot;/&gt;
+&lt;/typeAliases&gt;
+</code></pre>
 <h4 id="映射器（mappers）"><a href="#映射器（mappers）" class="headerlink" title="映射器（mappers）"></a>映射器（mappers）</h4><p>MapperRegistry：注册绑定我们的Mapper文件</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 使用相对于类路径的资源引用 --&gt;</span><br><span class="line">&lt;mappers&gt;</span><br><span class="line">  &lt;mapper resource=&quot;org/mybatis/builder/AuthorMapper.xml&quot;/&gt;</span><br><span class="line">  &lt;mapper resource=&quot;org/mybatis/builder/BlogMapper.xml&quot;/&gt;</span><br><span class="line">  &lt;mapper resource=&quot;org/mybatis/builder/PostMapper.xml&quot;/&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br><span class="line">&lt;!-- 使用映射器接口实现类的完全限定类名 --&gt;</span><br><span class="line">&lt;!-- 接口和他的Mapper配置文件必须同名，必须在同一个包下 --&gt;</span><br><span class="line">&lt;mappers&gt;</span><br><span class="line">  &lt;mapper class=&quot;org.mybatis.builder.AuthorMapper&quot;/&gt;</span><br><span class="line">  &lt;mapper class=&quot;org.mybatis.builder.BlogMapper&quot;/&gt;</span><br><span class="line">  &lt;mapper class=&quot;org.mybatis.builder.PostMapper&quot;/&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br><span class="line">&lt;!-- 将包内的映射器接口实现全部注册为映射器 --&gt;</span><br><span class="line">&lt;!-- 接口和他的Mapper配置文件必须同名，必须在同一个包下 --&gt;</span><br><span class="line">&lt;mappers&gt;</span><br><span class="line">  &lt;package name=&quot;org.mybatis.builder&quot;/&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;!-- 使用相对于类路径的资源引用 --&gt;
+&lt;mappers&gt;
+  &lt;mapper resource=&quot;org/mybatis/builder/AuthorMapper.xml&quot;/&gt;
+  &lt;mapper resource=&quot;org/mybatis/builder/BlogMapper.xml&quot;/&gt;
+  &lt;mapper resource=&quot;org/mybatis/builder/PostMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+&lt;!-- 使用映射器接口实现类的完全限定类名 --&gt;
+&lt;!-- 接口和他的Mapper配置文件必须同名，必须在同一个包下 --&gt;
+&lt;mappers&gt;
+  &lt;mapper class=&quot;org.mybatis.builder.AuthorMapper&quot;/&gt;
+  &lt;mapper class=&quot;org.mybatis.builder.BlogMapper&quot;/&gt;
+  &lt;mapper class=&quot;org.mybatis.builder.PostMapper&quot;/&gt;
+&lt;/mappers&gt;
+&lt;!-- 将包内的映射器接口实现全部注册为映射器 --&gt;
+&lt;!-- 接口和他的Mapper配置文件必须同名，必须在同一个包下 --&gt;
+&lt;mappers&gt;
+  &lt;package name=&quot;org.mybatis.builder&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
 <h4 id="作用域和生命周期"><a href="#作用域和生命周期" class="headerlink" title="作用域和生命周期"></a>作用域和生命周期</h4><p><img src="C:\Users\20150\AppData\Roaming\Typora\typora-user-images\image-20210917171453322.png" alt="image-20210917171453322"></p>
 <h5 id="SqlSessionFactoryBuilder"><a href="#SqlSessionFactoryBuilder" class="headerlink" title="SqlSessionFactoryBuilder:"></a>SqlSessionFactoryBuilder:</h5><p>一旦创建了SQLSessionFactory就不再需要了—–最佳作用域是方法作用域(局部方法变量)</p>
 <h5 id="SqlSessionFactory"><a href="#SqlSessionFactory" class="headerlink" title="SqlSessionFactory:"></a>SqlSessionFactory:</h5><p>可以想象为连接池,一旦被创建就应该在应用的运行期间一直存在—–最佳作用域是应用作用域(全局变量)</p>
@@ -284,10 +333,21 @@
 <p><img src="C:\Users\20150\AppData\Roaming\Typora\typora-user-images\image-20210917172721564.png" alt="image-20210917172721564"></p>
 <p>每一个Mapper代表一个具体的业务</p>
 <h4 id="解决属性名与字段名不一致的问题"><a href="#解决属性名与字段名不一致的问题" class="headerlink" title="解决属性名与字段名不一致的问题"></a>解决属性名与字段名不一致的问题</h4><p>实体类中属性名password,sql中pwd,查询结构pwd&#x3D;null</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select * from datasept.user where id = #&#123;id&#125;;</span><br><span class="line">&lt;==&gt;select id,name,pwd from datasept.user where id = #&#123;id&#125;;</span><br><span class="line">方法一:起别名</span><br><span class="line">select id,name,pwd as password from datasept.user where id = #&#123;id&#125;;</span><br></pre></td></tr></table></figure>
-
-<h5 id="方法二-resultMap结果集映射"><a href="#方法二-resultMap结果集映射" class="headerlink" title="方法二:resultMap结果集映射"></a>方法二:resultMap结果集映射</h5><figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap id=&quot;UserMap&quot; type=&quot;user&quot;&gt;</span><br><span class="line">	&lt;!--column数据库中的字段，property实体类中的属性--&gt;</span><br><span class="line">	&lt;!--&lt;result column=&quot;id&quot; property=&quot;id&quot;/&gt;--&gt;</span><br><span class="line">    &lt;!--&lt;result column=&quot;name&quot; property=&quot;name&quot;/&gt;--&gt;</span><br><span class="line">    &lt;result column=&quot;pwd&quot; property=&quot;password&quot;/&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br><span class="line">&lt;select id=&quot;getUserById&quot; resultMap=&quot;UserMap&quot;&gt;</span><br><span class="line">    select * from datasept.user where id = #&#123;id&#125;;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>select * from datasept.user where id = #&#123;id&#125;;
+&lt;==&gt;select id,name,pwd from datasept.user where id = #&#123;id&#125;;
+方法一:起别名
+select id,name,pwd as password from datasept.user where id = #&#123;id&#125;;
+</code></pre>
+<h5 id="方法二-resultMap结果集映射"><a href="#方法二-resultMap结果集映射" class="headerlink" title="方法二:resultMap结果集映射"></a>方法二:resultMap结果集映射</h5><pre><code>&lt;resultMap id=&quot;UserMap&quot; type=&quot;user&quot;&gt;
+    &lt;!--column数据库中的字段，property实体类中的属性--&gt;
+    &lt;!--&lt;result column=&quot;id&quot; property=&quot;id&quot;/&gt;--&gt;
+    &lt;!--&lt;result column=&quot;name&quot; property=&quot;name&quot;/&gt;--&gt;
+    &lt;result column=&quot;pwd&quot; property=&quot;password&quot;/&gt;
+&lt;/resultMap&gt;
+&lt;select id=&quot;getUserById&quot; resultMap=&quot;UserMap&quot;&gt;
+    select * from datasept.user where id = #&#123;id&#125;;
+&lt;/select&gt;
+</code></pre>
 <h4 id="结果映射（resultMap）"><a href="#结果映射（resultMap）" class="headerlink" title="结果映射（resultMap）"></a>结果映射（resultMap）</h4><ul>
 <li><code>constructor</code> — 用于在实例化类时，注入结果到构造方法中<ul>
 <li><code>idArg</code> - ID 参数；标记出作为 ID 的结果可以帮助提高整体性能</li>
@@ -314,8 +374,13 @@
 </ul>
 <h4 id="注解开发"><a href="#注解开发" class="headerlink" title="注解开发"></a>注解开发</h4><p>本质:反射机制实现</p>
 <p>底层:动态代理</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//接口方法上</span><br><span class="line">@Select(&quot;select * from datasept.user&quot;)</span><br><span class="line">//在核心配置文件中绑定接口</span><br><span class="line">&lt;mappers&gt;</span><br><span class="line">	&lt;mapper class=&quot;com.join.mybatis.dao.UserMapper&quot;/&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>//接口方法上
+@Select(&quot;select * from datasept.user&quot;)
+//在核心配置文件中绑定接口
+&lt;mappers&gt;
+    &lt;mapper class=&quot;com.join.mybatis.dao.UserMapper&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
 <h4 id="Mybatis详细执行过程"><a href="#Mybatis详细执行过程" class="headerlink" title="Mybatis详细执行过程"></a>Mybatis详细执行过程</h4><p>Resources获取加载全局配置文件——&gt;实例化SqlSessionFactoryBuilder构造器——&gt; 解析配置文件流XMLConfigBuilder ——&gt; Configuration所有配置信息 ——&gt; SqlSessionFactory实例化 ——&gt; transactional事务管理器 ——&gt; 创建executor执行器 ——&gt; 创建SqlSession， 实现CRUD ——&gt;查看是否执行完成——&gt;提交事务&#x2F;回滚——&gt;关闭</p>
 <h4 id="Lombok"><a href="#Lombok" class="headerlink" title="Lombok"></a>Lombok</h4><p>@Data：无参构造，get，set，toString，hashcode，equals</p>
 <p>@AllArgsConstructor：有参构造，但会把Data中的无参构造清除</p>
@@ -326,47 +391,188 @@
 <li>mapper.xml中查询的数据库字段属性的类型要和有参构造器的字段类型一一匹配；查询字段的个数要和有参构造器个数一样</li>
 </ul>
 <h4 id="一对多"><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h4><h5 id="按照查询嵌套处理-子查询"><a href="#按照查询嵌套处理-子查询" class="headerlink" title="按照查询嵌套处理(子查询)"></a>按照查询嵌套处理(子查询)</h5><p>select * fromstudent where tid &#x3D; (select ……)</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--    1、查询所有学生的信息</span><br><span class="line">        2、根据查询出来的学生id，寻找对应的老师</span><br><span class="line">--&gt;</span><br><span class="line">&lt;select id=&quot;getStudent&quot; resultMap=&quot;StudentTeacher&quot;&gt;</span><br><span class="line">    select * from student;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">&lt;resultMap id=&quot;StudentTeacher&quot; type=&quot;student&quot;&gt;</span><br><span class="line">    &lt;result property=&quot;id&quot; column=&quot;id&quot;/&gt;</span><br><span class="line">    &lt;result property=&quot;name&quot; column=&quot;name&quot;/&gt;</span><br><span class="line">    &lt;!--复杂的属性单独处理.对象:association 集合:collection--&gt;</span><br><span class="line">    &lt;association property=&quot;teacher&quot; column=&quot;tid&quot; javaType=&quot;teacher&quot; select=&quot;getTeacher&quot;/&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getTeacher&quot; resultType=&quot;teacher&quot;&gt;</span><br><span class="line">    select * from teacher where id = #&#123;tid&#125;;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;!--    1、查询所有学生的信息
+        2、根据查询出来的学生id，寻找对应的老师
+--&gt;
+&lt;select id=&quot;getStudent&quot; resultMap=&quot;StudentTeacher&quot;&gt;
+    select * from student;
+&lt;/select&gt;
 
-<h5 id="按照结果嵌套处理-联表查询"><a href="#按照结果嵌套处理-联表查询" class="headerlink" title="按照结果嵌套处理(联表查询)"></a>按照结果嵌套处理(联表查询)</h5><figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--按照结果嵌套处理--&gt;</span><br><span class="line">&lt;select id=&quot;getStudent2&quot; resultMap=&quot;StudentTeacher2&quot;&gt;</span><br><span class="line">	select s.id sid,s.name sname,t.name tname</span><br><span class="line">	from student s,teacher t</span><br><span class="line">	where s.tid = t.id;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;resultMap id=&quot;StudentTeacher2&quot; type=&quot;Student&quot;&gt;</span><br><span class="line">	&lt;result property=&quot;id&quot; column=&quot;sid&quot;/&gt;</span><br><span class="line">	&lt;result property=&quot;name&quot; column=&quot;sname&quot;/&gt;</span><br><span class="line">	&lt;association property=&quot;teacher&quot; javaType=&quot;teacher&quot;&gt;</span><br><span class="line">		&lt;result property=&quot;name&quot; column=&quot;tname&quot;/&gt;</span><br><span class="line">	&lt;/association&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+&lt;resultMap id=&quot;StudentTeacher&quot; type=&quot;student&quot;&gt;
+    &lt;result property=&quot;id&quot; column=&quot;id&quot;/&gt;
+    &lt;result property=&quot;name&quot; column=&quot;name&quot;/&gt;
+    &lt;!--复杂的属性单独处理.对象:association 集合:collection--&gt;
+    &lt;association property=&quot;teacher&quot; column=&quot;tid&quot; javaType=&quot;teacher&quot; select=&quot;getTeacher&quot;/&gt;
+&lt;/resultMap&gt;
 
-<h4 id="一对多-1"><a href="#一对多-1" class="headerlink" title="一对多"></a>一对多</h4><h5 id="按照结构嵌套查询"><a href="#按照结构嵌套查询" class="headerlink" title="按照结构嵌套查询"></a>按照结构嵌套查询</h5><figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--    按结果嵌套查询--&gt;</span><br><span class="line">    &lt;select id=&quot;getTeacher3&quot; resultMap=&quot;TeacherStudent&quot;&gt;</span><br><span class="line">        select s.id sid,s.name sname,t.name tname,t.id tid</span><br><span class="line">        from student s,teacher t</span><br><span class="line">        where s.tid = t.id and t.id = #&#123;tid&#125;;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    &lt;resultMap id=&quot;TeacherStudent&quot; type=&quot;teacher&quot;&gt;</span><br><span class="line">        &lt;result property=&quot;id&quot; column=&quot;tid&quot;/&gt;</span><br><span class="line">        &lt;result property=&quot;name&quot; column=&quot;tname&quot;/&gt;</span><br><span class="line">&lt;!--    javaType:指定属性的类型</span><br><span class="line">        集合中的泛型信息，使用ofType获取    --&gt;</span><br><span class="line">        &lt;collection property=&quot;students&quot; ofType=&quot;student&quot;&gt;</span><br><span class="line">            &lt;result property=&quot;id&quot; column=&quot;sid&quot;/&gt;</span><br><span class="line">            &lt;result property=&quot;name&quot; column=&quot;sname&quot;/&gt;</span><br><span class="line">            &lt;result property=&quot;tid&quot; column=&quot;tid&quot;/&gt;</span><br><span class="line">        &lt;/collection&gt;</span><br><span class="line">    &lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+&lt;select id=&quot;getTeacher&quot; resultType=&quot;teacher&quot;&gt;
+    select * from teacher where id = #&#123;tid&#125;;
+&lt;/select&gt;
+</code></pre>
+<h5 id="按照结果嵌套处理-联表查询"><a href="#按照结果嵌套处理-联表查询" class="headerlink" title="按照结果嵌套处理(联表查询)"></a>按照结果嵌套处理(联表查询)</h5><pre><code>&lt;!--按照结果嵌套处理--&gt;
+&lt;select id=&quot;getStudent2&quot; resultMap=&quot;StudentTeacher2&quot;&gt;
+    select s.id sid,s.name sname,t.name tname
+    from student s,teacher t
+    where s.tid = t.id;
+&lt;/select&gt;
+&lt;resultMap id=&quot;StudentTeacher2&quot; type=&quot;Student&quot;&gt;
+    &lt;result property=&quot;id&quot; column=&quot;sid&quot;/&gt;
+    &lt;result property=&quot;name&quot; column=&quot;sname&quot;/&gt;
+    &lt;association property=&quot;teacher&quot; javaType=&quot;teacher&quot;&gt;
+        &lt;result property=&quot;name&quot; column=&quot;tname&quot;/&gt;
+    &lt;/association&gt;
+&lt;/resultMap&gt;
+</code></pre>
+<h4 id="一对多-1"><a href="#一对多-1" class="headerlink" title="一对多"></a>一对多</h4><h5 id="按照结构嵌套查询"><a href="#按照结构嵌套查询" class="headerlink" title="按照结构嵌套查询"></a>按照结构嵌套查询</h5><pre><code>&lt;!--    按结果嵌套查询--&gt;
+    &lt;select id=&quot;getTeacher3&quot; resultMap=&quot;TeacherStudent&quot;&gt;
+        select s.id sid,s.name sname,t.name tname,t.id tid
+        from student s,teacher t
+        where s.tid = t.id and t.id = #&#123;tid&#125;;
+    &lt;/select&gt;
+    &lt;resultMap id=&quot;TeacherStudent&quot; type=&quot;teacher&quot;&gt;
+        &lt;result property=&quot;id&quot; column=&quot;tid&quot;/&gt;
+        &lt;result property=&quot;name&quot; column=&quot;tname&quot;/&gt;
+&lt;!--    javaType:指定属性的类型
+        集合中的泛型信息，使用ofType获取    --&gt;
+        &lt;collection property=&quot;students&quot; ofType=&quot;student&quot;&gt;
+            &lt;result property=&quot;id&quot; column=&quot;sid&quot;/&gt;
+            &lt;result property=&quot;name&quot; column=&quot;sname&quot;/&gt;
+            &lt;result property=&quot;tid&quot; column=&quot;tid&quot;/&gt;
+        &lt;/collection&gt;
+    &lt;/resultMap&gt;
+</code></pre>
+<h5 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h5><pre><code>&lt;!--    子查询--&gt;
+    &lt;select id=&quot;getTeacher4&quot; resultMap=&quot;TeacherStudent2&quot;&gt;
+        select * from teacher where id = #&#123;tid&#125;;
+    &lt;/select&gt;
+    &lt;resultMap id=&quot;TeacherStudent2&quot; type=&quot;teacher&quot;&gt;
+        &lt;collection property=&quot;students&quot; javaType=&quot;ArrayList&quot; ofType=&quot;student&quot; select=&quot;getStudentByTeacherId&quot; column=&quot;id&quot;/&gt;
 
-<h5 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h5><figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--    子查询--&gt;</span><br><span class="line">    &lt;select id=&quot;getTeacher4&quot; resultMap=&quot;TeacherStudent2&quot;&gt;</span><br><span class="line">        select * from teacher where id = #&#123;tid&#125;;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    &lt;resultMap id=&quot;TeacherStudent2&quot; type=&quot;teacher&quot;&gt;</span><br><span class="line">        &lt;collection property=&quot;students&quot; javaType=&quot;ArrayList&quot; ofType=&quot;student&quot; select=&quot;getStudentByTeacherId&quot; column=&quot;id&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line">    &lt;select id=&quot;getStudentByTeacherId&quot; resultType=&quot;student&quot;&gt;</span><br><span class="line">        select * from student where tid = #&#123;tid&#125;;</span><br><span class="line">    &lt;/select&gt;</span><br></pre></td></tr></table></figure>
-
+    &lt;/resultMap&gt;
+    &lt;select id=&quot;getStudentByTeacherId&quot; resultType=&quot;student&quot;&gt;
+        select * from student where tid = #&#123;tid&#125;;
+    &lt;/select&gt;
+</code></pre>
 <h6 id="…小结"><a href="#…小结" class="headerlink" title="…小结"></a>…小结</h6><p>关联：association（多对一）</p>
 <p>集合：collection（一对多）</p>
 <p>javaType：用来指定实体类中属性的类型</p>
 <p>ofType：用来指定映射到List或者集合中的pojo类型，泛型中的约束类型</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">pojo类：</span><br><span class="line">publicclass User &#123;</span><br><span class="line">    privateint id;</span><br><span class="line">    privateString username;</span><br><span class="line">    privateString mobile;</span><br><span class="line">    privateList&lt;Post&gt;posts;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">user.xml：</span><br><span class="line">&lt;resultMap type=&quot;User&quot; id=&quot;resultUserMap&quot;&gt;</span><br><span class="line">    &lt;result property=&quot;id&quot; javaType=&quot;int&quot; column=&quot;user_id&quot; /&gt;</span><br><span class="line">    &lt;result property=&quot;username&quot; javaType=&quot;string&quot; column=&quot;username&quot; /&gt;</span><br><span class="line">    &lt;result property=&quot;mobile&quot;  column=&quot;mobile&quot; /&gt;</span><br><span class="line">&lt;!-- javatype指定的是user对象的属性的类型（例如id，posts），而oftype指定的是映射到list集合属性中pojo的类型（本例指的是post类型）--&gt;</span><br><span class="line">    &lt;collection property=&quot;posts&quot;  ofType=&quot;com.spenglu.Post&quot;  javaType=&quot;java.util.ArrayList&quot; column=&quot;userid&quot;&gt;</span><br><span class="line">        &lt;id property=&quot;id&quot; column=&quot;post_id&quot; javaType=&quot;int&quot; jdbcType=&quot;INTEGER&quot;/&gt;   </span><br><span class="line">         &lt;result property=&quot;title&quot; column=&quot;title&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot;/&gt;</span><br><span class="line">         &lt;result property=&quot;content&quot; column=&quot;content&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot;/&gt;</span><br><span class="line">    &lt;/collection&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>pojo类：
+publicclass User &#123;
+    privateint id;
+    privateString username;
+    privateString mobile;
+    privateList&lt;Post&gt;posts;
+&#125;
+ 
+user.xml：
+&lt;resultMap type=&quot;User&quot; id=&quot;resultUserMap&quot;&gt;
+    &lt;result property=&quot;id&quot; javaType=&quot;int&quot; column=&quot;user_id&quot; /&gt;
+    &lt;result property=&quot;username&quot; javaType=&quot;string&quot; column=&quot;username&quot; /&gt;
+    &lt;result property=&quot;mobile&quot;  column=&quot;mobile&quot; /&gt;
+&lt;!-- javatype指定的是user对象的属性的类型（例如id，posts），而oftype指定的是映射到list集合属性中pojo的类型（本例指的是post类型）--&gt;
+    &lt;collection property=&quot;posts&quot;  ofType=&quot;com.spenglu.Post&quot;  javaType=&quot;java.util.ArrayList&quot; column=&quot;userid&quot;&gt;
+        &lt;id property=&quot;id&quot; column=&quot;post_id&quot; javaType=&quot;int&quot; jdbcType=&quot;INTEGER&quot;/&gt;   
+         &lt;result property=&quot;title&quot; column=&quot;title&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot;/&gt;
+         &lt;result property=&quot;content&quot; column=&quot;content&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot;/&gt;
+    &lt;/collection&gt;
+&lt;/resultMap&gt;
+</code></pre>
 <h4 id="动态Sql（在SQL层面执行逻辑代码）"><a href="#动态Sql（在SQL层面执行逻辑代码）" class="headerlink" title="动态Sql（在SQL层面执行逻辑代码）"></a>动态Sql（在SQL层面执行逻辑代码）</h4><p>根据不同条件生成不同sql语句</p>
-<h5 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h5><figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectBlogIf&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;</span><br><span class="line">        select * from blog where 1=1</span><br><span class="line">        &lt;if test=&quot;title != null&quot; &gt;</span><br><span class="line">            and title = #&#123;title&#125;</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">        &lt;if test=&quot;author != null&quot; &gt;</span><br><span class="line">            and author = #&#123;author&#125;</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;!--若去掉 1=1和第一个条件的and ，只查询第二个条件就会查询错误，sql语句变为select * from blog where and author = ?;--&gt;</span><br><span class="line">______________________________________________________</span><br><span class="line">&lt;!--where 标签--&gt;</span><br><span class="line">&lt;select id=&quot;selectBlogIf&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;</span><br><span class="line">    select * from blog</span><br><span class="line">    &lt;where&gt;</span><br><span class="line">        &lt;if test=&quot;title != null&quot; &gt;</span><br><span class="line">            title = #&#123;title&#125;</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">        &lt;if test=&quot;author != null&quot; &gt;</span><br><span class="line">            and author = #&#123;author&#125;</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">    &lt;/where&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-
+<h5 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h5><pre><code>&lt;select id=&quot;selectBlogIf&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;
+        select * from blog where 1=1
+        &lt;if test=&quot;title != null&quot; &gt;
+            and title = #&#123;title&#125;
+        &lt;/if&gt;
+        &lt;if test=&quot;author != null&quot; &gt;
+            and author = #&#123;author&#125;
+        &lt;/if&gt;
+&lt;/select&gt;
+&lt;!--若去掉 1=1和第一个条件的and ，只查询第二个条件就会查询错误，sql语句变为select * from blog where and author = ?;--&gt;
+______________________________________________________
+&lt;!--where 标签--&gt;
+&lt;select id=&quot;selectBlogIf&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;
+    select * from blog
+    &lt;where&gt;
+        &lt;if test=&quot;title != null&quot; &gt;
+            title = #&#123;title&#125;
+        &lt;/if&gt;
+        &lt;if test=&quot;author != null&quot; &gt;
+            and author = #&#123;author&#125;
+        &lt;/if&gt;
+    &lt;/where&gt;
+&lt;/select&gt;
+</code></pre>
 <h5 id="choose-when-otherwise"><a href="#choose-when-otherwise" class="headerlink" title="choose,when,otherwise"></a>choose,when,otherwise</h5><p>不想使用所有的条件，而只是想从多个条件中选择一个使用。针对这种情况，MyBatis 提供了 choose 元素，它有点像 Java 中的 <strong>switch 语句</strong>。</p>
 <p>只要满足第一个就显示满足第一个的记录</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectBlogChoose&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;</span><br><span class="line">    select * from blog</span><br><span class="line">    &lt;where&gt;</span><br><span class="line">        &lt;choose&gt;</span><br><span class="line">            &lt;when test=&quot;title != null&quot;&gt;</span><br><span class="line">                title = #&#123;title&#125;</span><br><span class="line">            &lt;/when&gt;</span><br><span class="line">            &lt;when test=&quot;author != null&quot;&gt;</span><br><span class="line">                and author = #&#123;author&#125;</span><br><span class="line">            &lt;/when&gt;</span><br><span class="line">            &lt;otherwise&gt;</span><br><span class="line">                and views = #&#123;views&#125;</span><br><span class="line">            &lt;/otherwise&gt;</span><br><span class="line">        &lt;/choose&gt;</span><br><span class="line">    &lt;/where&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;select id=&quot;selectBlogChoose&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;
+    select * from blog
+    &lt;where&gt;
+        &lt;choose&gt;
+            &lt;when test=&quot;title != null&quot;&gt;
+                title = #&#123;title&#125;
+            &lt;/when&gt;
+            &lt;when test=&quot;author != null&quot;&gt;
+                and author = #&#123;author&#125;
+            &lt;/when&gt;
+            &lt;otherwise&gt;
+                and views = #&#123;views&#125;
+            &lt;/otherwise&gt;
+        &lt;/choose&gt;
+    &lt;/where&gt;
+&lt;/select&gt;
+</code></pre>
 <h5 id="trim-where-set"><a href="#trim-where-set" class="headerlink" title="trim,where,set"></a>trim,where,set</h5><ul>
 <li><em>where</em> 元素只会在子元素返回任何内容的情况下才插入 “WHERE” 子句。而且，若子句的开头为 “AND” 或 “OR”，<em>where</em> 元素也会将它们去除。</li>
 </ul>
 <p>如果 <em>where</em> 元素与你期望的不太一样，你也可以通过自定义 trim 元素来定制 <em>where</em> 元素的功能。比如，和 <em>where</em> 元素等价的自定义 trim 元素为：</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;trim prefix=&quot;WHERE&quot; prefixOverrides=&quot;AND |OR &quot;&gt;</span><br><span class="line">  ...</span><br><span class="line">&lt;/trim&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;trim prefix=&quot;WHERE&quot; prefixOverrides=&quot;AND |OR &quot;&gt;
+  ...
+&lt;/trim&gt;
+</code></pre>
 <ul>
 <li><em>prefixOverrides</em> 属性会忽略通过管道符分隔的文本序列（注意此例中的空格是必要的）。上述例子会移除所有 <em>prefixOverrides</em> 属性中指定的内容，并且插入 <em>prefix</em> 属性中指定的内容</li>
 </ul>
 <p><em>set</em> 元素会动态地在行首插入 SET 关键字，并会删掉额外的逗号（这些逗号是在使用条件语句给列赋值时引入的）。</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;update id=&quot;updateBlog&quot; parameterType=&quot;map&quot;&gt;</span><br><span class="line">    update blog</span><br><span class="line">    &lt;set&gt;</span><br><span class="line">        &lt;if test=&quot;title != null&quot;&gt;</span><br><span class="line">        	&lt;!--逗号--&gt;</span><br><span class="line">            title = #&#123;title&#125;,</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">        &lt;if test=&quot;author != null&quot;&gt;</span><br><span class="line">            author = #&#123;author&#125;</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">    &lt;/set&gt;</span><br><span class="line">    where id = #&#123;id&#125;</span><br><span class="line">&lt;/update&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;update id=&quot;updateBlog&quot; parameterType=&quot;map&quot;&gt;
+    update blog
+    &lt;set&gt;
+        &lt;if test=&quot;title != null&quot;&gt;
+            &lt;!--逗号--&gt;
+            title = #&#123;title&#125;,
+        &lt;/if&gt;
+        &lt;if test=&quot;author != null&quot;&gt;
+            author = #&#123;author&#125;
+        &lt;/if&gt;
+    &lt;/set&gt;
+    where id = #&#123;id&#125;
+&lt;/update&gt;
+</code></pre>
 <p>与 <em>set</em> 元素等价的自定义 <em>trim</em> 元素：</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- prefix:前缀 </span><br><span class="line">&lt;trim prefix=&quot;SET&quot; suffixOverrides=&quot;&quot; &gt;</span><br><span class="line">  ...</span><br><span class="line">&lt;/trim&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;!-- prefix:前缀 
+&lt;trim prefix=&quot;SET&quot; suffixOverrides=&quot;&quot; &gt;
+  ...
+&lt;/trim&gt;
+</code></pre>
 <p>注意，我们覆盖了后缀值设置，并且自定义了前缀值。</p>
 <h5 id="SQL片段"><a href="#SQL片段" class="headerlink" title="SQL片段"></a>SQL片段</h5><p><sql>标签公共的片段抽取</p>
 <p><include>标签进行复用</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;sql id=&quot;if-title-author&quot;&gt;</span><br><span class="line">	&lt;if test=&quot;title != null&quot; &gt;</span><br><span class="line">		title = #&#123;title&#125;</span><br><span class="line">	&lt;/if&gt;</span><br><span class="line">	&lt;if test=&quot;author != null&quot; &gt;</span><br><span class="line">		and author = #&#123;author&#125;</span><br><span class="line">	&lt;/if&gt;</span><br><span class="line">&lt;/sql&gt;</span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;selectBlogIf&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;</span><br><span class="line">	select * from blog</span><br><span class="line">	&lt;where&gt;</span><br><span class="line">		&lt;include refid=&quot;if-title-author&quot;&gt;&lt;/include&gt;</span><br><span class="line">	&lt;/where&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;sql id=&quot;if-title-author&quot;&gt;
+    &lt;if test=&quot;title != null&quot; &gt;
+        title = #&#123;title&#125;
+    &lt;/if&gt;
+    &lt;if test=&quot;author != null&quot; &gt;
+        and author = #&#123;author&#125;
+    &lt;/if&gt;
+&lt;/sql&gt;
 
+&lt;select id=&quot;selectBlogIf&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;
+    select * from blog
+    &lt;where&gt;
+        &lt;include refid=&quot;if-title-author&quot;&gt;&lt;/include&gt;
+    &lt;/where&gt;
+&lt;/select&gt;
+</code></pre>
 <h6 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h6><ul>
 <li>最好基于单表来定义Sql片段</li>
 <li>不要存在where标签</li>
@@ -374,12 +580,46 @@
 <h5 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h5><p><em>foreach</em> 元素的功能非常强大，它允许你指定一个集合，声明可以在元素体内使用的集合项（item）和索引（index）变量。它也允许你指定开头与结尾的字符串以及集合项迭代之间的分隔符。这个元素也不会错误地添加多余的分隔符。</p>
 <p>你可以将任何可迭代对象（如 List、Set 等）、Map 对象或者数组对象作为集合参数传递给 <em>foreach</em>。当使用可迭代对象或者数组时，index 是当前迭代的序号，item 的值是本次迭代获取到的元素。当使用 Map 对象（或者 Map.Entry 对象的集合）时，index 是键，item 是值</p>
 <p>open：开头	separator：分隔符 	close：结尾</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectPostIn&quot; resultType=&quot;domain.blog.Post&quot;&gt;</span><br><span class="line">  SELECT *</span><br><span class="line">  FROM POST P</span><br><span class="line">  WHERE ID in</span><br><span class="line">  &lt;foreach item=&quot;item&quot; index=&quot;index&quot; collection=&quot;list&quot;</span><br><span class="line">      open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;</span><br><span class="line">        #&#123;item&#125;</span><br><span class="line">  &lt;/foreach&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">    select * from blog where 1=1 and (id=1 or id=2 or id=3)</span><br><span class="line">    传递一个map，map中可以存在一个集合</span><br><span class="line">--&gt;</span><br><span class="line">&lt;select id=&quot;selectBlogForeach&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;</span><br><span class="line">    select * from blog</span><br><span class="line">    &lt;where&gt;</span><br><span class="line">        &lt;!--sql语句中括号部分--&gt;</span><br><span class="line">        &lt;foreach collection=&quot;ids&quot; item=&quot;id&quot; open=&quot;and (&quot; close=&quot;)&quot; separator=&quot;or&quot;&gt;</span><br><span class="line">            id = #&#123;id&#125;</span><br><span class="line">        &lt;/foreach&gt;</span><br><span class="line">    &lt;/where&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">——————————————————————————————————————————————————————————</span><br><span class="line">public void selectBlogForeach()&#123;</span><br><span class="line">	SqlSession sqlSession = MybatisUtil.getSqlSession();</span><br><span class="line">	BlogMapper mapper = 	sqlSession.getMapper(BlogMapper.class);</span><br><span class="line">	HashMap map = new HashMap();</span><br><span class="line">	ArrayList&lt;Integer&gt; ids = new ArrayList&lt;&gt;();</span><br><span class="line">	map.put(&quot;ids&quot;,ids);</span><br><span class="line">	ids.add(1);</span><br><span class="line">	ids.add(2);</span><br><span class="line">	ids.add(3);</span><br><span class="line">	List&lt;Blog&gt; blogs = mapper.selectBlogForeach(map);</span><br><span class="line">	for (Blog blog : blogs) &#123;</span><br><span class="line">		System.out.println(blog);</span><br><span class="line">	&#125;</span><br><span class="line">	sqlSession.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code>&lt;select id=&quot;selectPostIn&quot; resultType=&quot;domain.blog.Post&quot;&gt;
+  SELECT *
+  FROM POST P
+  WHERE ID in
+  &lt;foreach item=&quot;item&quot; index=&quot;index&quot; collection=&quot;list&quot;
+      open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+        #&#123;item&#125;
+  &lt;/foreach&gt;
+&lt;/select&gt;
+</code></pre>
+<pre><code>&lt;!--
+    select * from blog where 1=1 and (id=1 or id=2 or id=3)
+    传递一个map，map中可以存在一个集合
+--&gt;
+&lt;select id=&quot;selectBlogForeach&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;
+    select * from blog
+    &lt;where&gt;
+        &lt;!--sql语句中括号部分--&gt;
+        &lt;foreach collection=&quot;ids&quot; item=&quot;id&quot; open=&quot;and (&quot; close=&quot;)&quot; separator=&quot;or&quot;&gt;
+            id = #&#123;id&#125;
+        &lt;/foreach&gt;
+    &lt;/where&gt;
+&lt;/select&gt;
+——————————————————————————————————————————————————————————
+public void selectBlogForeach()&#123;
+    SqlSession sqlSession = MybatisUtil.getSqlSession();
+    BlogMapper mapper = 	sqlSession.getMapper(BlogMapper.class);
+    HashMap map = new HashMap();
+    ArrayList&lt;Integer&gt; ids = new ArrayList&lt;&gt;();
+    map.put(&quot;ids&quot;,ids);
+    ids.add(1);
+    ids.add(2);
+    ids.add(3);
+    List&lt;Blog&gt; blogs = mapper.selectBlogForeach(map);
+    for (Blog blog : blogs) &#123;
+        System.out.println(blog);
+    &#125;
+    sqlSession.close();
+&#125;
+</code></pre>
 <h4 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h4><h5 id="日志工厂"><a href="#日志工厂" class="headerlink" title="日志工厂"></a>日志工厂</h5><p>数据库操作出现异常，需要排错，使用日志工厂</p>
 <table>
 <thead>
@@ -391,20 +631,55 @@
 </tr>
 </thead>
 </table>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置日志**大小写、空格--&gt;</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">	&lt;!--STDOUT_LOGGING可以直接用--&gt;</span><br><span class="line">    &lt;setting name=&quot;logImpl&quot; value=&quot;STDOUT_LOGGING&quot;/&gt;</span><br><span class="line">&lt;/settings&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;!--配置日志**大小写、空格--&gt;
+&lt;settings&gt;
+    &lt;!--STDOUT_LOGGING可以直接用--&gt;
+    &lt;setting name=&quot;logImpl&quot; value=&quot;STDOUT_LOGGING&quot;/&gt;
+&lt;/settings&gt;
+</code></pre>
 <h5 id="log4j"><a href="#log4j" class="headerlink" title="log4j"></a>log4j</h5><ul>
 <li>Log4j是Apache的一个开源项目，通过使用Log4j，我们可以控制日志信息输送的目的地是<strong>控制台、文件、GUI组件</strong>，甚至是套接口服务器、NT的事件记录器、UNIXSyslog守护进程等</li>
 <li>可以控制每一条日志的输出格式</li>
 <li>通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程</li>
 <li>可以通过一个配置文件来灵活地进行配置，而不需要修改应用的代码</li>
 </ul>
-<h6 id="1、导入依赖"><a href="#1、导入依赖" class="headerlink" title="1、导入依赖"></a>1、导入依赖</h6><figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;log4j&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;log4j&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2.17&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="1、导入依赖"><a href="#1、导入依赖" class="headerlink" title="1、导入依赖"></a>1、导入依赖</h6><pre><code>&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;log4j&lt;/groupId&gt;
+    &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+    &lt;version&gt;1.2.17&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h6 id="2、配置文件"><a href="#2、配置文件" class="headerlink" title="2、配置文件"></a>2、配置文件</h6><pre><code>#将等级为DEBUG的日志信息输出到console和file这两个目的地，console和file的定义在下面的代码
+log4j.rootLogger=DEBUG,console,file
 
-<h6 id="2、配置文件"><a href="#2、配置文件" class="headerlink" title="2、配置文件"></a>2、配置文件</h6><figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#将等级为DEBUG的日志信息输出到console和file这两个目的地，console和file的定义在下面的代码</span><br><span class="line">log4j.rootLogger=DEBUG,console,file</span><br><span class="line"></span><br><span class="line">#控制台输出的相关设置</span><br><span class="line">log4j.appender.console = org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.console.Target = System.out</span><br><span class="line">log4j.appender.console.Threshold=DEBUG</span><br><span class="line">log4j.appender.console.layout = org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.console.layout.ConversionPattern=[%c]-%m%n</span><br><span class="line"></span><br><span class="line">#文件输出的相关设置</span><br><span class="line">log4j.appender.file = org.apache.log4j.RollingFileAppender</span><br><span class="line">log4j.appender.file.File=./log/join.log</span><br><span class="line">log4j.appender.file.MaxFileSize=10mb</span><br><span class="line">log4j.appender.file.Threshold=DEBUG</span><br><span class="line">log4j.appender.file.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.file.layout.ConversionPattern=[%p][%d&#123;yy-MM-dd&#125;][%c]%m%n</span><br><span class="line"></span><br><span class="line">#日志输出级别</span><br><span class="line">log4j.logger.org.mybatis=DEBUG</span><br><span class="line">log4j.logger.java.sql=DEBUG</span><br><span class="line">log4j.logger.java.sql.Statement=DEBUG</span><br><span class="line">log4j.logger.java.sql.ResultSet=DEBUG</span><br><span class="line">log4j.logger.java.sql.PreparedStatement=DEBUG</span><br></pre></td></tr></table></figure>
+#控制台输出的相关设置
+log4j.appender.console = org.apache.log4j.ConsoleAppender
+log4j.appender.console.Target = System.out
+log4j.appender.console.Threshold=DEBUG
+log4j.appender.console.layout = org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=[%c]-%m%n
 
-<h6 id="3、配置config文件中的log4j"><a href="#3、配置config文件中的log4j" class="headerlink" title="3、配置config文件中的log4j"></a>3、配置config文件中的log4j</h6><figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置日志**大小写、空格--&gt;</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">    &lt;setting name=&quot;logImpl&quot; value=&quot;LOG4J&quot;/&gt;</span><br><span class="line">&lt;/settings&gt;</span><br></pre></td></tr></table></figure>
+#文件输出的相关设置
+log4j.appender.file = org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=./log/join.log
+log4j.appender.file.MaxFileSize=10mb
+log4j.appender.file.Threshold=DEBUG
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=[%p][%d&#123;yy-MM-dd&#125;][%c]%m%n
 
+#日志输出级别
+log4j.logger.org.mybatis=DEBUG
+log4j.logger.java.sql=DEBUG
+log4j.logger.java.sql.Statement=DEBUG
+log4j.logger.java.sql.ResultSet=DEBUG
+log4j.logger.java.sql.PreparedStatement=DEBUG
+</code></pre>
+<h6 id="3、配置config文件中的log4j"><a href="#3、配置config文件中的log4j" class="headerlink" title="3、配置config文件中的log4j"></a>3、配置config文件中的log4j</h6><pre><code>&lt;!--配置日志**大小写、空格--&gt;
+&lt;settings&gt;
+    &lt;setting name=&quot;logImpl&quot; value=&quot;LOG4J&quot;/&gt;
+&lt;/settings&gt;
+</code></pre>
 <h5 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h5><ul>
 <li>Mybatis系统中默认定义了两级缓存：一级缓存和二级缓存</li>
 <li>默认情况下，只有一级缓存开启（SqlSession级别的缓存，也称为本地缓存）只在一次sqlSession中有效</li>
@@ -434,191 +709,111 @@
 </tr>
 </thead>
 </table>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;settings&gt;</span><br><span class="line">    &lt;setting name=&quot;cacheEnabled&quot; value=&quot;t&quot;/&gt;</span><br><span class="line">&lt;/settings&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;settings&gt;
+    &lt;setting name=&quot;cacheEnabled&quot; value=&quot;t&quot;/&gt;
+&lt;/settings&gt;
+</code></pre>
 <p> 要启用全局的二级缓存，只需要在你的 SQL 映射文件中添加一行：</p>
-<figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;cache/&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="整合缓存"><a href="#整合缓存" class="headerlink" title="整合缓存"></a>整合缓存</h5><figure class="hljs highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.mybatis.caches/mybatis-ehcache --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.mybatis.caches&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mybatis-ehcache&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code>&lt;cache/&gt;
+</code></pre>
+<h5 id="整合缓存"><a href="#整合缓存" class="headerlink" title="整合缓存"></a>整合缓存</h5><pre><code>&lt;!-- https://mvnrepository.com/artifact/org.mybatis.caches/mybatis-ehcache --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis.caches&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-ehcache&lt;/artifactId&gt;
+    &lt;version&gt;1.2.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
 <h1 id="Mybatis-plus"><a href="#Mybatis-plus" class="headerlink" title="Mybatis-plus"></a>Mybatis-plus</h1><p><img src="C:\Users\20150\Desktop\临时\join\mybatis-plus.jpg" alt="mybatis-plus"></p>
 
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/mybatis/" rel="tag"><i class="fas fa-tags"></i>mybatis</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  
-  <nav class="page-nav">
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2022/04/16/hello-world/" rel="next" title="Hello World"><i class="fas fa-angle-left"></i><span class="nav-title">Hello World</span></a>
-      
     </div>
-    <div class="page-nav-prev page-nav-item">
-      
-    </div>
-  </nav>
-  
-  
-  
 
-<div class="comments" id="comments">
-  
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <div id="comment">
+        <div id="gitalk-container">
+        </div>
+    </div>
+    
 </div>
-
-
-
-  
-</div>
-
-          </div>
-          
-          
-          
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
-  
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
-    </div>
-  </div>
-  <div class="search-result-box" id="search-result"></div>
-  
-  
-<div class="info sidebar-item" id="info">
-  
-  <img class="author-avatar" src="/images/avatar.png" alt="YQY">
-  
-  <h1 class="author-name">YQY</h1>
-  <h2 class="author-description"></h2>
-  <div class="site-count">
-    
-    
-    
-    
-    <div class="archives-count count-block">
-      <div class="site-count-title">归档</div>
-      <div><a href="/archives/">2</a></div>
-    </div>
-    
-    
-    
-    <div class="categories-count count-block">
-      <div class="site-count-title">分类</div>
-      <div><a href="/categories/">1</a></div>
-    </div>
-    
-    
-    
-    <div class="tags-count count-block">
-      <div class="site-count-title">标签</div>
-      <div><a href="/tags/">1</a></div>
-    </div>
-    
-    
-    
-    
-  </div>
-  
-</div>
-
-
-  <div class="sidebar-sticky">
-    
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Mybatis"><span class="toc-text">Mybatis</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-text">官方文档</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-text">数据持久化</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#%E6%8C%81%E4%B9%85%E5%B1%82%EF%BC%88Dao%EF%BC%8CService%EF%BC%8CController%EF%BC%89"><span class="toc-text">持久层（Dao，Service，Controller）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5xml"><span class="toc-text">增删改查xml</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#Test%E4%BB%A3%E7%A0%81"><span class="toc-text">Test代码</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E9%85%8D%E7%BD%AE%E8%A7%A3%E6%9E%90"><span class="toc-text">配置解析</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="toc-text">类型别名</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E6%98%A0%E5%B0%84%E5%99%A8%EF%BC%88mappers%EF%BC%89"><span class="toc-text">映射器（mappers）</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">作用域和生命周期</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#SqlSessionFactoryBuilder"><span class="toc-text">SqlSessionFactoryBuilder:</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#SqlSessionFactory"><span class="toc-text">SqlSessionFactory:</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#SqlSession"><span class="toc-text">SqlSession:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E8%A7%A3%E5%86%B3%E5%B1%9E%E6%80%A7%E5%90%8D%E4%B8%8E%E5%AD%97%E6%AE%B5%E5%90%8D%E4%B8%8D%E4%B8%80%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">解决属性名与字段名不一致的问题</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C-resultMap%E7%BB%93%E6%9E%9C%E9%9B%86%E6%98%A0%E5%B0%84"><span class="toc-text">方法二:resultMap结果集映射</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E7%BB%93%E6%9E%9C%E6%98%A0%E5%B0%84%EF%BC%88resultMap%EF%BC%89"><span class="toc-text">结果映射（resultMap）</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91"><span class="toc-text">注解开发</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Mybatis%E8%AF%A6%E7%BB%86%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">Mybatis详细执行过程</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Lombok"><span class="toc-text">Lombok</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E4%B8%80%E5%AF%B9%E5%A4%9A"><span class="toc-text">一对多</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#%E6%8C%89%E7%85%A7%E6%9F%A5%E8%AF%A2%E5%B5%8C%E5%A5%97%E5%A4%84%E7%90%86-%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-text">按照查询嵌套处理(子查询)</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#%E6%8C%89%E7%85%A7%E7%BB%93%E6%9E%9C%E5%B5%8C%E5%A5%97%E5%A4%84%E7%90%86-%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-text">按照结果嵌套处理(联表查询)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E4%B8%80%E5%AF%B9%E5%A4%9A-1"><span class="toc-text">一对多</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#%E6%8C%89%E7%85%A7%E7%BB%93%E6%9E%84%E5%B5%8C%E5%A5%97%E6%9F%A5%E8%AF%A2"><span class="toc-text">按照结构嵌套查询</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-text">子查询</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#%E2%80%A6%E5%B0%8F%E7%BB%93"><span class="toc-text">…小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E5%8A%A8%E6%80%81Sql%EF%BC%88%E5%9C%A8SQL%E5%B1%82%E9%9D%A2%E6%89%A7%E8%A1%8C%E9%80%BB%E8%BE%91%E4%BB%A3%E7%A0%81%EF%BC%89"><span class="toc-text">动态Sql（在SQL层面执行逻辑代码）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="toc-text">if语句</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#choose-when-otherwise"><span class="toc-text">choose,when,otherwise</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#trim-where-set"><span class="toc-text">trim,where,set</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#SQL%E7%89%87%E6%AE%B5"><span class="toc-text">SQL片段</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9%EF%BC%9A"><span class="toc-text">注意点：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#foreach"><span class="toc-text">foreach</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#%E6%97%A5%E5%BF%97"><span class="toc-text">日志</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#%E6%97%A5%E5%BF%97%E5%B7%A5%E5%8E%82"><span class="toc-text">日志工厂</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#log4j"><span class="toc-text">log4j</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#1%E3%80%81%E5%AF%BC%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-text">1、导入依赖</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#2%E3%80%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">2、配置文件</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#3%E3%80%81%E9%85%8D%E7%BD%AEconfig%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84log4j"><span class="toc-text">3、配置config文件中的log4j</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#%E7%BC%93%E5%AD%98"><span class="toc-text">缓存</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98"><span class="toc-text">一级缓存</span></a></li><li class="toc-item toc-level-6"><a class="list-group-item toc-link" href="#%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98"><span class="toc-text">二级缓存</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#%E6%95%B4%E5%90%88%E7%BC%93%E5%AD%98"><span class="toc-text">整合缓存</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Mybatis-plus"><span class="toc-text">Mybatis-plus</span></a></div>
-    </div>
-    
-    
-    
-    <hr>
-    <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>社交链接</p></div>
-      <ul>
-        
-        <li><i class="fas fa-envelope"></i><a href="mailto:2015037802@qq.com" target="_blank">E-Mail</a></li>
-        
-        <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
-        
-        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
-        
-      </ul>
-    </div>
-    
-    
-    <hr>
-    <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>友情链接</div>
-      <ul>
-        
-        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://hengxt.github.io/" target="_blank">hxt</a></li>
-        
-      </ul>
-    </div>
-    
-  </div>
-</aside>
-
-
-          
+                     
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2022 Hexo
+            <span class="footer-icon">
+                <a-icon type="flag" theme="filled" /></span>
+            @YQY
         </div>
-      </div>
-    </main>
-    
-<footer id="footer" class="footer" style="background: #33363b;">
-  <div class="container">
-    <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
-    </div>
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="copyright">
-          <span class="author">YQY</span><span class="year"><i class="far fa-copyright"></i>2022 - 2022</span>
-        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle">Particle Theme</a></div>
         
-        <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
-        </div>
-        
-      </div>
-      <div class="footer-right">
-        <div class="custom-info">
-          
-          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
-          
-        </div>
-        <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
-        </div>
-      </div>
     </div>
-  </div>
+
 </footer>
 
+<script src="/js/highlight.min.js"></script>
+<script src="/js/particle.js"></script>
+                </div>
+            </div>
+        </transition>
+    </div>
 
-  </body>
+    <script>
+    new Vue({
+        el: "#layout",
+        data: {
+            show_page: false,
+            onload_menu: false,
+            menu_show: false,
+            card_top: 100
+        },
+        created: function () {
+            var that = this
+            window.onload = function () {
+                that.show_page = true
+                document.getElementById("loadcontent").style.opacity = 0
+                setTimeout(function () {
+                    document.getElementById("loadleft").style.width = 0
+                    document.getElementById("loadright").style.width = 0
+                }, 300)
+                setTimeout(function () {
+                    document.getElementById("loading").style = "display:none"
+                }, 600)
+            }
+        },
+        mounted: function () {
+            var that = this
+            window.addEventListener('scroll', function (e) {
+                that.menu_show = false
+            })
+        },
+        methods: {
+            home_click: function () {
+                window.scrollTo({
+                    top: window.innerHeight - 80,
+                    behavior: "smooth",
+                });
+            }
+        }
+    })
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'hexo-theme-particle',      // The repository of store comments,
+        owner: 'korilin',
+        admin: ['korilin'],
+        language: 'zh_CN',
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: true  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
+
+</body>
+
 </html>
